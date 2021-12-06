@@ -1,30 +1,22 @@
 import React, { Component } from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Header,
-  Image,
-} from 'react-native';
-
+import { Text, View, StyleSheet, TouchableOpacity, Header, Image } from 'react-native';
 import AppHeader from '../components/AppHeader';
 import db from '../config';
 
 export default class HomeScreen extends Component {
 
-  teamA(){
-   db.ref('/').update({
-     'teamA':1
-   })
- }
+  teamA() {
+    db.ref('/').update({
+      'teamA': 1
+    })
+  }
 
- teamB(){
-   console.log(db);
-   db.ref('/').update({
-     'teamB':2
-   })
- }
+  teamB() {
+    console.log(db);
+    db.ref('/').update({
+      'teamB': 2
+    })
+  }
 
   render() {
     return (
@@ -40,17 +32,17 @@ export default class HomeScreen extends Component {
             </TouchableOpacity>
           </View>
           <View style={styles.ratingContainer}>
-            <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
+            <Text style={{ textAlign: 'center', fontSize: 25 }}>Vote Here</Text>
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
-              <Text style={{ fontSize:20}}>Team A</Text>
+              onPress={this.teamA()}>
+              <Text style={{ fontSize: 20 }}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamB()}>
-              <Text style={{ fontSize:20}}>Team B</Text>
+              onPress={this.teamB()}>
+              <Text style={{ fontSize: 20 }}>Team B</Text>
             </TouchableOpacity>
 
           </View>
@@ -66,12 +58,12 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor: "coral",
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
     borderRadius: 15,
-    margin:10,
+    margin: 10,
     width: 150,
     height: 50,
   },
